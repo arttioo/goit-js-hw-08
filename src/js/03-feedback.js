@@ -1,16 +1,17 @@
 import throttle from 'lodash.throttle';
 
-const email = document.querySelector('input');
+// const email = document.querySelector('input');
 const message = document.querySelector('textarea');
-email.addEventListener('input', onEmailInput);
+// email.addEventListener('input', onEmailInput);
 message.addEventListener('input', onMessageInput);
 
-function onEmailInput(evt) {
-  const value = evt.currentTarget.value;
-  console.log(value);
-}
+// function onEmailInput(evt) {
+//   const value = evt.currentTarget.value;
+//   console.log(value);
+// }
 function onMessageInput(evt) {
   const value = evt.currentTarget.value;
+  localStorage.setItem('feedback-form-state', value);
   console.log(value);
 }
 
@@ -33,9 +34,8 @@ function onMessageInput(evt) {
 // function onFormSubmit(evt) {
 //   evt.preventDefault();
 //   evt.currentTarget.reset();
-
 // }
-// проверка на наличие текста в input
+// // проверка на наличие текста в input
 // function textareaCheck() {
 //   const savedMessage = localStorage.getItem('feedback-form-state');
 //   if (savedMessage) {
