@@ -10,7 +10,7 @@ setFormData();
 form.addEventListener('input', throttle(onFormChange, 500));
 function onFormChange(evt) {
   const emailValue = email.value;
-  const messageValue = message.value.trim();
+  const messageValue = message.value;
 
   const formWritten = {
     email: emailValue,
