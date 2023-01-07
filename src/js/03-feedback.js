@@ -16,7 +16,6 @@ function onFormChange(evt) {
     email: emailValue,
     message: messageValue,
   };
-  console.log(formWritten);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formWritten));
 }
 
@@ -24,9 +23,16 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(evt) {
   const emailValue = email.value;
   const messageValue = message.value;
+
+  const formWritten = {
+    email: emailValue,
+    message: messageValue,
+  };
+
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
+  console.log(formWritten);
   if (emailValue.length == 0 || messageValue.length == 0) {
     alert('all fields must be filled');
   }
